@@ -19,7 +19,7 @@ import facebook from "../../public/Facebook.png";
 const Footer = () => {
   return (
     <footer className="bg-[#7C7C7B] px-28 py-10">
-      <div className=" bg-white rounded-lg p-5">
+      <div className=" bg-white rounded-lg p-10">
         <div className="flex items-start justify-between">
           <div className="w-[30%]">
             <Image src={Logo} width={100} height={100} alt="logo" />

@@ -45,7 +45,13 @@ const CustomSection = ({
                 className={`${montserrat700.className} text-[#3B3B3B] text-4xl`}
               >
                 {boldheading}{" "}
-                <span className={`${montserrat400.className}`}>{heading}</span>
+                <span
+                  className={`${
+                    tag ? montserrat400.className : montserrat700.className
+                  }`}
+                >
+                  {heading}
+                </span>
               </p>
             </div>
 
@@ -72,7 +78,11 @@ const CustomSection = ({
             <div className="flex items-center justify-start">
               {verticalLine && <div className="w-1 h-20 bg-[#EE0003]" />}
               <p
-                className={`${montserrat400.className} text-[#3B3B3B] text-4xl ml-3`}
+                className={`${
+                  verticalLine
+                    ? montserrat400.className
+                    : montserrat700.className
+                } text-[#3B3B3B] text-4xl ml-3`}
               >
                 {heading}{" "}
                 <span className={`${montserrat700.className}`}>

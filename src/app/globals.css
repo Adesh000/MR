@@ -37,4 +37,9 @@ body {
   .flexStart {
     @apply flex items-center justify-start;
   }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, #ff7e5f, #feb47b);
+  }
 }

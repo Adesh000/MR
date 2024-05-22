@@ -13,6 +13,8 @@ import basket from "../../public/Group 1000002612.png";
 import blockchain from "../../public/blockchain.png";
 import referFriend from "../../public/Refer a friend-pana 1.png";
 import Group from "../../public/Group.png";
+import Frame from "../../public/frame.png";
+import MR from "../../public/Asset 1@3x 2.png";
 import {
   STATS,
   TIME_STATS,
@@ -36,7 +38,7 @@ export default function Home() {
             From Our Hearts to Your Home
           </p>
           <p
-            className={`${montserrat400.className} text-[#3B3B3B] text-3xl my-5`}
+            className={`${montserrat400.className} text-[#3B3B3B] text-3xl my-7`}
           >
             Learn More{" "}
             <span
@@ -53,13 +55,21 @@ export default function Home() {
             win a year of free grocery delivery. Additionally, users receive a
             gift coupon every 24 hours{" "}
           </p>
-          <div className="flexStart my-5">
+          <div className="flexStart my-7">
             <div className="mr-5">
               <CustomButton text={"Get Coupon"} type="primary" />
             </div>
             <CustomButton text={"Watch Video"} type="secondary" />
           </div>
-          <div className="flexStart my-5">
+          <div>
+            <p
+              className={`${montserrat700.className} text-gradient text-3xl flex`}
+            >
+              "One year Grocery gift from, {"  "}
+              <Image src={MR} width={70} height={50} alt="mr" /> "
+            </p>
+          </div>
+          <div className="flexStart my-7">
             <div className="flex">
               <Image src={Ellipse42} width={40} height={40} alt="ell" />
               <Image
@@ -183,7 +193,7 @@ export default function Home() {
         stats={STATS}
         buttonText="Join Now"
       />
-
+      <Image src={Frame} width={"100%"} height={500} alt="frame" />
       <Faqs />
     </main>
   );
