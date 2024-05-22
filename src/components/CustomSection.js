@@ -19,24 +19,36 @@ const CustomSection = ({
   buttonText,
   options,
   stats,
-  customHeading,
+  boldheading,
+  verticalLine,
+  tag,
 }) => {
-  console.log("sdcnj", customHeading);
   return (
     <section className={`flexBetween mx-28 my-20 `}>
       {type === "primary" ? (
         <>
           <Image src={image} width={400} height={500} alt="vision" />
           <div className="w-[50%]">
-            {customHeading ? (
-              customHeading()
-            ) : (
+            {/* <customHeading /> */}
+            {tag && (
+              <div className="bg-gradient-to-r from-[#FEE8B0] to-[#FFF] my-3 w-60">
+                <p
+                  className={`${montserrat500.className} text-[#7c5704] text-xl`}
+                >
+                  🎁 Rewarding
+                </p>
+              </div>
+            )}
+            <div>
+              {verticalLine && <div className="w-1 h-10 bg-[#EE0003]" />}
               <p
                 className={`${montserrat700.className} text-[#3B3B3B] text-4xl`}
               >
-                {heading}
+                {boldheading}{" "}
+                <span className={`${montserrat400.className}`}>{heading}</span>
               </p>
-            )}
+            </div>
+
             <p
               className={`${montserrat500.className} text-[#686868] text-xl my-10`}
             >
@@ -57,9 +69,17 @@ const CustomSection = ({
       ) : (
         <>
           <div className="w-[50%]">
-            <p className={`${montserrat700.className} text-[#3B3B3B] text-4xl`}>
-              {heading}
-            </p>
+            <div className="flex items-center justify-start">
+              {verticalLine && <div className="w-1 h-20 bg-[#EE0003]" />}
+              <p
+                className={`${montserrat400.className} text-[#3B3B3B] text-4xl ml-3`}
+              >
+                {heading}{" "}
+                <span className={`${montserrat700.className}`}>
+                  {boldheading}
+                </span>
+              </p>
+            </div>
             <p
               className={`${montserrat500.className} text-[#686868] text-xl my-10`}
             >

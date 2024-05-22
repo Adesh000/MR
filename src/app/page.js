@@ -25,7 +25,9 @@ import TimeCircle from "@/components/TimeCircle";
 import CustomSection from "@/components/CustomSection";
 import Faqs from "@/components/Faqs";
 export default function Home() {
-  const headComp = () => <p>Unlock Rewards for You and Your Loved Ones!</p>;
+  const headComp = () => (
+    <p className="text-4xl">Unlock Rewards for You and Your Loved Ones!</p>
+  );
   return (
     <main className="">
       <section className="flexBetween mx-28 my-28">
@@ -139,7 +141,9 @@ export default function Home() {
         <CustomSection
           image={basket}
           type="secondary"
-          // heading={"Unlock Rewards for You and Your Loved Ones!"}
+          verticalLine={true}
+          heading={"Unlock Rewards for"}
+          boldheading={"You and Your Loved Ones!"}
           customHeading={headComp}
           text={`At MR, we believe that sharing joy should be rewarding. That's why we've introduced our "Earn and Refer" program—an exciting opportunity for you to not only enhance the lives of your friends and family but also earn fantastic rewards for yourself!`}
           buttonText="Share Now"
@@ -149,7 +153,9 @@ export default function Home() {
       <CustomSection
         image={blockchain}
         type="primary"
-        heading={"How It Works: Simple, Seamless, and Rewarding"}
+        heading={"Simple, Seamless, and Rewarding"}
+        tag={true}
+        boldheading={"How It Works:"}
         text={`At M R Corporation, we're a community-driven organization focused on making a meaningful impact in Canadian families' lives. We offer free grocery delivery and digital coupons to ensure accessibility and affordability for all.`}
         options={["Share the Love", "Earn 10% of the Joy"]}
       />
@@ -161,7 +167,9 @@ export default function Home() {
         <CustomSection
           image={referFriend}
           type="secondary"
-          heading={"Why Share the Joy with MR?"}
+          heading={"Why Share the Joy with "}
+          boldheading={"MR?"}
+          verticalLine={true}
           text={`Spread joy with MR! Get instant rewards when your loved ones join, refer others for more benefits, and share the joy with a 10% share when they receive a gift.`}
           buttonText="Share Now"
         />
@@ -170,7 +178,8 @@ export default function Home() {
       <CustomSection
         image={Group}
         type="secondary"
-        heading={"Our Presence across Canada"}
+        verticalLine={true}
+        boldheading={"Our Presence across Canada"}
         stats={STATS}
         buttonText="Join Now"
       />
