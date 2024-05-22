@@ -1,113 +1,181 @@
 import Image from "next/image";
-
+import Grocery from "../../public/groceries.png";
+import Ios from "../../public/IOS.png";
+import PlayStore from "../../public/Play store.png";
+import Star from "../../public/Star 3.png";
+import Ellipse42 from "../../public/Ellipse 42.png";
+import Ellipse43 from "../../public/Ellipse 43.png";
+import Ellipse44 from "../../public/Ellipse 44.png";
+import vision from "../../public/image 160.png";
+import mission from "../../public/image 156.png";
+import CustomButton from "@/components/CustomButton";
+import basket from "../../public/Group 1000002612.png";
+import blockchain from "../../public/blockchain.png";
+import referFriend from "../../public/Refer a friend-pana 1.png";
+import Group from "../../public/Group.png";
+import {
+  STATS,
+  TIME_STATS,
+  montserrat400,
+  montserrat500,
+  montserrat600,
+  montserrat700,
+} from "@/constants/Constants";
+import TimeCircle from "@/components/TimeCircle";
+import CustomSection from "@/components/CustomSection";
+import Faqs from "@/components/Faqs";
 export default function Home() {
+  const headComp = () => <p>Unlock Rewards for You and Your Loved Ones!</p>;
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="">
+      <section className="flexBetween mx-28 my-28">
+        <div className="w-[50%]">
+          <p className={`${montserrat600.className} text-[#686868] text-xl `}>
+            From Our Hearts to Your Home
+          </p>
+          <p
+            className={`${montserrat400.className} text-[#3B3B3B] text-3xl my-5`}
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            Learn More{" "}
+            <span
+              className={`${montserrat700.className} text-[#686868] text-3xl`}
+            >
+              About Us
+            </span>
+          </p>
+          <p className={`${montserrat400.className} text-[#686868] text-xl`}>
+            {" "}
+            <span className="text-[#EE0003]">MR Corporation</span> is a premier
+            grocery delivery website operating in Canada. We provide a
+            convenient platform for users to buy coupons and stand a chance to
+            win a year of free grocery delivery. Additionally, users receive a
+            gift coupon every 24 hours{" "}
+          </p>
+          <div className="flexStart my-5">
+            <div className="mr-5">
+              <CustomButton text={"Get Coupon"} type="primary" />
+            </div>
+            <CustomButton text={"Watch Video"} type="secondary" />
+          </div>
+          <div className="flexStart my-5">
+            <div className="flex">
+              <Image src={Ellipse42} width={40} height={40} alt="ell" />
+              <Image
+                src={Ellipse43}
+                width={40}
+                height={40}
+                alt="ell"
+                style={{ position: "relative", right: 15 }}
+              />
+              <Image
+                src={Ellipse44}
+                width={40}
+                height={40}
+                alt="ell"
+                style={{ position: "relative", right: 30 }}
+              />
+            </div>
+            <div className="relative right-5">
+              <p
+                className={`${montserrat600.className} text-[#686868] text-base`}
+              >
+                Our Happy Customers{" "}
+              </p>
+              <div className="flexStart">
+                <Image src={Star} width={15} height={15} alt="star" />
+                <p
+                  className={`${montserrat600.className} text-[#686868] text-sm ml-2`}
+                >
+                  4.5 <span className="text-[#EE0003]">(6.7 Reviews)</span>{" "}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flexStart">
+            <Image src={Ios} width={150} height={80} alt="ios" />
+            <Image src={PlayStore} width={150} height={80} alt="play store" />
+            {TIME_STATS.map((item, index) => (
+              <TimeCircle
+                key={index}
+                stat={item?.stat}
+                timeForm={item?.timeForm}
+              />
+            ))}
+          </div>
         </div>
+        <Image src={Grocery} width={400} height={400} alt={"photo"} />
+      </section>
+      <div className="bg-[#F6F6F6] flex items-center justify-evenly py-3">
+        <p className={`${montserrat400.className} text-[#45A843] text-xl`}>
+          Jack smith just bought 2 coupons(AB)
+        </p>
+        <Image src={Star} width={30} height={30} alt="star" />
+        <p className={`${montserrat400.className} text-[#45A843] text-xl`}>
+          Jack smith just bought 2 coupons(AB)
+        </p>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      <CustomSection
+        type="primary"
+        image={vision}
+        heading={"Vision"}
+        text="To revolutionize the grocery delivery experience in Canada by
+              offering easy access to coupons and the opportunity to win
+              exciting prizes, while ensuring customer satisfaction and
+              convenience"
+      />
+      <CustomSection
+        type="secondary"
+        image={mission}
+        heading={"Mission"}
+        text="We envision becoming the go-to destination for grocery delivery services in Canada, setting the standard for convenience, affordability, and customer rewards in the industry
+        "
+      />
+
+      <div
+        className="
+        bg-gradient-to-b from-[#e84a4a1e] to-[#f1833f18] py-1"
+      >
+        <CustomSection
+          image={basket}
+          type="secondary"
+          // heading={"Unlock Rewards for You and Your Loved Ones!"}
+          customHeading={headComp}
+          text={`At MR, we believe that sharing joy should be rewarding. That's why we've introduced our "Earn and Refer" program—an exciting opportunity for you to not only enhance the lives of your friends and family but also earn fantastic rewards for yourself!`}
+          buttonText="Share Now"
         />
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <CustomSection
+        image={blockchain}
+        type="primary"
+        heading={"How It Works: Simple, Seamless, and Rewarding"}
+        text={`At M R Corporation, we're a community-driven organization focused on making a meaningful impact in Canadian families' lives. We offer free grocery delivery and digital coupons to ensure accessibility and affordability for all.`}
+        options={["Share the Love", "Earn 10% of the Joy"]}
+      />
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div
+        className="
+        bg-gradient-to-b from-[#e84a4a1e] to-[#f1833f18] py-1"
+      >
+        <CustomSection
+          image={referFriend}
+          type="secondary"
+          heading={"Why Share the Joy with MR?"}
+          text={`Spread joy with MR! Get instant rewards when your loved ones join, refer others for more benefits, and share the joy with a 10% share when they receive a gift.`}
+          buttonText="Share Now"
+        />
       </div>
+
+      <CustomSection
+        image={Group}
+        type="secondary"
+        heading={"Our Presence across Canada"}
+        stats={STATS}
+        buttonText="Join Now"
+      />
+
+      <Faqs />
     </main>
   );
 }
